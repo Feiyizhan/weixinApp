@@ -44,6 +44,20 @@ Page({
 	
     
     
+  },
+  onShareAppMessage:function(){
+	return {
+      title: '史上最难猜数字游戏',
+      path: '/pages/numberGame/numberGame',
+      success: function(res) {
+        // 分享成功
+		console.log(res)
+      },
+      fail: function(res) {
+        // 分享失败
+		console.log(res)
+      }
+    }  
   }
 })
 
