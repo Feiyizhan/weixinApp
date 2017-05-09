@@ -1,20 +1,16 @@
-//game.js
+//index.js
 //获取应用实例
 var app = getApp()
 var utils = require('../../utils/util.js')
 Page({
   data: {
-    maxCount: 0,
-    maxValue: 128,
-    minValue: 0,
-    data: 0,
-    maxG: 0,
-    minG: 0,
-	gap: 0,
-	checkReult: 99,  //检查结果，0匹配，1偏大，-1 偏小，99 初始值
-	index:1, //当前次数
-	gapRate:0.05 //随机调整差的比例
-	
+    list: [],
+    duration: 2000,
+    indicatorDots: true,
+    autoplay: true,
+    interval: 3000,
+    loading: false,
+    plain: false
   },
   //事件处理函数
   bindViewTap(e) {
@@ -47,8 +43,6 @@ Page({
   },
   onLoad () {
     let that = this
-	let maxCount = (int) Math.ceil(Math.log(maxValue-minValue)/(Math.log(2)))-1 ;
-	
     wx.request({
       url: 'https://news-at.zhihu.com/api/4/news/latest',
       headers: {

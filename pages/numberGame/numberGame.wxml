@@ -1,0 +1,42 @@
+<!--game.wxml-->
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__hd">
+        <view class="page__title">史上最难猜数字游戏</view>
+        <view class="page__desc">史上最难猜数字游戏</view>
+    </view>
+    <view class="page__bd">
+		<view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">错误提示</view>
+		<view class="weui-panel weui-panel_access">
+			  <view class="weui-media-box weui-media-box_text">
+				  <view class="weui-media-box__title weui-media-box__title_in-text">{{gameStartMessage}}</view>
+				  <view class="weui-media-box__desc">数值范围(含):{{minValue}}-{{maxValue}}</view>
+				  <view class="weui-media-box__desc">当前为第{{index}}次,剩余{{maxCount-index+1}}次机会.</view>
+				  <view class="weui-media-box__title weui-media-box__title_in-text">本次结果：{{currentResultMessage}}</view>
+			  </view>
+		</view>
+		<form bindsubmit="formSubmit" bindreset="formReset">
+			<view class="weui-cell weui-cell_input">
+				<view class="weui-cell__hd">
+					<view class="weui-label">数字</view>
+				</view>
+				<view class="weui-cell__bd">
+					<input class="weui-input" name="currNumber" type="number" maxlength="3" focus="true" placeholder="请输入数字" value="{{currNumber}}"/>
+				</view>
+			</view>
+			
+			<view class="weui-btn-area">
+				<button class="weui-btn" type="primary" formType="submit" wx:if="{{!endFlag}}">猜一下</button>
+				<button class="weui-btn" type="warn" formType="reset" >重新开始</button>
+			</view>
+
+
+		</form>
+		
+    </view>
+</view>	
+	
+
+
+	  
+	  
+	  

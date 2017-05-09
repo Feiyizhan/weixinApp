@@ -3,12 +3,14 @@
     "pages/index/index",
     "pages/theme/theme",
     "pages/detail/detail",
-    "pages/list/list"
+    "pages/list/list",
+    "pages/zhihu/zhihu",
+    "pages/numberGame/numberGame"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#00a2ea",
-    "navigationBarTitleText": "知乎日报",
+    "navigationBarTitleText": "飞一站",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
@@ -26,6 +28,11 @@
       "iconPath": "images/icon_component.png",
       "selectedIconPath": "images/icon_component_HL.png",
       "text": "主题日报"
+    }, {
+      "pagePath": "pages/zhihu/zhihu",
+      "iconPath": "images/icon_API.png",
+      "selectedIconPath": "images/icon_API_HL.png",
+      "text": "知乎日报"
     }]
   },
   "networkTimeout": {
